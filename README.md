@@ -34,4 +34,4 @@ Melhoria na tomada de decisões comerciais com base em relatórios e análises d
 precisos e atualizados.
 Com um sistema de banco de dados eficiente e bem projetado, a BikeShop está confiante de 
 que poderá atender às demandas de seus clientes de maneira mais eficaz e continuar 
-prosperando no mercado de bicicletas
+prosperando no mercado de bicicletas.
