@@ -1,0 +1,88 @@
+código de criação da tabela
+-----------------------------
+Create TABLE cliente(
+ 	id_cliente int AUTO_INCREMENT PRIMARY KEY,
+ 	nome_cliente varchar(50) not null,
+ 	cpf varchar(15) UNIQUE NOT NULL,
+    contato int not null,
+    endereco int not null,
+    historico_compras int not null
+    
+);
+
+create table estoque (
+	id_estoque INT PRIMARY KEY AUTO_INCREMENT,
+    quantidade int not null,
+    produto int not null
+);
+
+create table registro(
+	id_registro int AUTO_INCREMENT PRIMARY KEY,
+    data_venda datetime DEFAULT CURRENT_TIMESTAMP,
+    produtos_vendidos int not null,
+    preco_venda decimal(6,2) not null,
+    metodo_pagamento int NOT null, 
+    funcionario int not null
+);
+
+create table pagamento(
+	id_pagamento int PRIMARY KEY AUTO_INCREMENT,
+    forma_pagamento varchar(20) not null,
+    parcelas int not null,
+    valor_pagar decimal (6,2) not null,
+    valor_parcela decimal (6,2) not null,
+    troco decimal (6,2) not null,
+    venda int not null
+);
+
+
+CREATE TABLE itensvenda(
+	id_itensvenda int PRIMARY KEY AUTO_INCREMENT,
+    venda int not null,
+    produtos_vendidos varchar (30) not null,
+    quantidade_vendida int not null,
+    total decimal (8,2)
+);
+CREATE TABLE produto (
+	id_produto int PRIMARY KEY AUTO_INCREMENT,
+    fornecedor int not null,
+    marca varchar (30) not null,
+    modelo varchar (30) not null,
+    categoria int not null,
+    nome_produto varchar(50) not null,
+    preco_venda decimal (6,2) not null
+);
+CREATE TABLE categoria (
+	id_categoria int PRIMARY KEY AUTO_INCREMENT,
+    tipo_categoria varchar (30) not null,
+    descricao_categoria varchar(100) not null
+);
+CREATE TABLE fornecedor (
+	id_fornecedor int PRIMARY key AUTO_INCREMENT,
+    cnpj varchar(15) UNIQUE not null,
+    endereco int not null,
+    contato int not null,
+    nome_fantasia varchar(30) not null
+);
+CREATE TABLE endereco(
+	id_endereco int PRIMARY key AUTO_INCREMENT,
+    complemento varchar(255) not null,
+    cep varchar(10) not null,
+    bairro varchar (30) not null,
+    cidade varchar(30) not null,
+    estado varchar(2) not null,
+    logradouro varchar(50) not null,
+    numero varchar(5) not null
+);
+CREATE TABLE contato(
+	id_contato int PRIMARY KEY AUTO_INCREMENT,
+    telefone varchar(15) not null,
+    email varchar (100)
+    
+    
+);
+CREATE TABLE historico_compras(
+	id_historico_compras int PRIMARY key AUTO_INCREMENT,
+    cliente int not null,
+    registro int not null
+);
